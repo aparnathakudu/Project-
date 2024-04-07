@@ -1,1 +1,50 @@
+function showHigherStudies() {
+            var qualification = document.getElementById("qualification").value;
+            var higherStudiesSection = document.getElementById("higherStudiesSection");
 
+            // Clear previous options
+            var higherStudiesSelect = document.getElementById("higherStudies");
+            higherStudiesSelect.innerHTML = '<option value="">Select</option>';<option value="DIPLOMA">DIPLOMA</option>
+
+        </select>
+        <div id="subjectsSection" style="display: none;">
+            <label for="subjects">Select Subjects:</label>
+            <select id="subjects" name="subjects" multiple>
+                <!-- Options will be added dynamically using JavaScript -->
+            </select>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function showSubjects() {
+            var course = document.getElementById("course").value;
+            var subjectsSection = document.getElementById("subjectsSection");
+            var subjectsSelect = document.getElementById("subjects");
+
+            // Clear previous options
+            subjectsSelect.innerHTML = '';
+
+            // Populate options based on selected course
+            if (course === "Bachelor Degree") {
+                var subjects = ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering", "Chemical Engineering"];
+                subjects.forEach(function(subject) {
+                    var option = document.createElement("option");
+                    option.text = subject;
+                    subjectsSelect.add(option);
+                });
+            } else if (course === "DIPLOMA") {
+                var subjects = ["Computer Hardware Engineering", "Electrical & Eloctronics Engineering ", "Mechanical Engineering", "Civil Engineering",];
+                subjects.forEach(function(subject) {
+                    var option = document.createElement("option");
+                    option.text = subject;
+                    subjectsSelect.add(option);
+                });
+            }
+
+            // Show the subjects section
+            subjectsSection.style.display = "block";
+        }
+    </script>
+</body>
+  </html>
